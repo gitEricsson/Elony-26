@@ -2,7 +2,6 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, RefreshCw, HeartOff } from 'lucide-react';
 import FloralBackground from './FloralBackground';
-import { redis } from '@/lib/redis';
 
 interface GuestMessage {
   id: string;
@@ -39,25 +38,18 @@ const BlessingsWallSection = () => {
   const fetchWishes = async () => {
     try {
       setIsLoading(true);
+      const response = await fetch('/.netlify/functions/wishes');
+      const data = await response.json();
 
-      // Direct call to Upstash: Get all items in the list (0 to -1)
-      const data = await redis.lrange('wedding_wishes', 0, -1);
-
-      // Parse dates (JSON returns ISO strings) and sort by newest
-      const parsedData = (data as any[])
+      const parsedData = data
         .map((msg: any) => ({
           ...msg,
           timestamp: new Date(msg.timestamp),
         }))
-        .sort(
-          (a: GuestMessage, b: GuestMessage) =>
-            b.timestamp.getTime() - a.timestamp.getTime()
-        );
+        .sort((a: any, b: any) => b.timestamp - a.timestamp);
 
       setAllMessages(parsedData);
-      setHasError(false);
     } catch (error) {
-      console.error('Error loading blessings:', error);
       setHasError(true);
     } finally {
       setIsLoading(false);

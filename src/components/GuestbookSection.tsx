@@ -3,7 +3,6 @@ import { motion, useInView } from 'framer-motion';
 import { Send, Upload } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import FloralBackground from './FloralBackground';
-import { redis } from '@/lib/redis';
 
 interface GuestbookSectionProps {
   onNewMessage: () => void;
@@ -31,15 +30,17 @@ const GuestbookSection = ({ onNewMessage }: GuestbookSectionProps) => {
     setIsSubmitting(true);
 
     try {
-      const newWish = {
-        id: crypto.randomUUID(), // Browser native UUID
-        name: name.trim(),
-        message: message.trim(),
-        timestamp: new Date().toISOString(),
-      };
+      const response = await fetch('/.netlify/functions/wishes', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: name.trim(),
+          message: message.trim(),
+        }),
+      });
 
-      // Direct call to Upstash from the browser
-      await redis.lpush('wedding_wishes', newWish);
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
 
       toast({
         title: 'Message sent! 💕',
