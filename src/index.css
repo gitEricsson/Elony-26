@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cream & Wine Wedding Theme */
+    --background: 40 33% 96%;
+    --foreground: 20 14% 20%;
+
+    --card: 40 30% 98%;
+    --card-foreground: 20 14% 20%;
+
+    --popover: 40 30% 98%;
+    --popover-foreground: 20 14% 20%;
+
+    /* Wine Primary (was Gold) */
+    --primary: 350 65% 40%;
+    --primary-foreground: 40 33% 96%;
+
+    /* Cream Secondary */
+    --secondary: 40 30% 92%;
+    --secondary-foreground: 20 14% 20%;
+
+    --muted: 40 20% 90%;
+    --muted-foreground: 20 10% 40%;
+
+    /* Gold Accent (was Wine) */
+    --accent: 43 74% 49%;
+    --accent-foreground: 40 33% 96%;
+
+    /* Deep Wine for Destructive */
+    --destructive: 350 75% 30%;
+    --destructive-foreground: 40 33% 96%;
+
+    --border: 40 25% 85%;
+    --input: 40 25% 85%;
+    --ring: 350 65% 40%; /* Wine ring instead of gold */
+
+    --radius: 0.5rem;
+
+    /* Custom Wedding Colors - Swapped Hierarchy */
+    --wine: 350 65% 40%;
+    --wine-dark: 350 75% 30%;
+    --wine-light: 350 55% 55%;
+    --gold: 43 74% 49%;
+    --gold-light: 43 60% 70%;
+    --gold-dark: 43 80% 35%;
+    --cream: 40 33% 96%;
+    --cream-dark: 40 25% 90%;
+    --magenta: 345 80% 45%;
+
+    --sidebar-background: 40 30% 98%;
+    --sidebar-foreground: 20 14% 20%;
+    --sidebar-primary: 350 65% 40%; /* Wine */
+    --sidebar-primary-foreground: 40 33% 96%;
+    --sidebar-accent: 40 25% 92%;
+    --sidebar-accent-foreground: 20 14% 20%;
+    --sidebar-border: 40 25% 85%;
+    --sidebar-ring: 350 65% 40%; /* Wine */
+  }
+
+  .dark {
+    --background: 20 14% 10%;
+    --foreground: 40 33% 96%;
+    --card: 20 14% 12%;
+    --card-foreground: 40 33% 96%;
+    --popover: 20 14% 12%;
+    --popover-foreground: 40 33% 96%;
+    --primary: 350 55% 50%; /* Wine lighter for dark mode */
+    --primary-foreground: 20 14% 10%;
+    --secondary: 20 10% 20%;
+    --secondary-foreground: 40 33% 96%;
+    --muted: 20 10% 20%;
+    --muted-foreground: 40 20% 70%;
+    --accent: 43 74% 55%; /* Gold for dark mode */
+    --accent-foreground: 20 14% 10%;
+    --destructive: 350 70% 45%;
+    --destructive-foreground: 40 33% 96%;
+    --border: 20 10% 25%;
+    --input: 20 10% 25%;
+    --ring: 350 55% 50%; /* Wine */
+    --sidebar-background: 20 14% 12%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 350 55% 50%; /* Wine */
+    --sidebar-primary-foreground: 20 14% 10%;
+    --sidebar-accent: 20 10% 20%;
+    --sidebar-accent-foreground: 40 33% 96%;
+    --sidebar-border: 20 10% 25%;
+    --sidebar-ring: 350 55% 50%; /* Wine */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+    line-height: inherit !important;
+  }
+}
+
+@layer utilities {
+  /* Update gradient utilities */
+  .text-gradient-wine {
+    background: linear-gradient(
+      135deg,
+      hsl(350 65% 40%),
+      hsl(350 55% 55%),
+      hsl(350 75% 30%)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(
+      135deg,
+      hsl(43 74% 49%),
+      hsl(43 60% 60%),
+      hsl(43 80% 35%)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-cream {
+    background: linear-gradient(180deg, hsl(40 33% 96%), hsl(40 30% 92%));
+  }
+
+  .bg-gradient-wine {
+    background: linear-gradient(135deg, hsl(350 65% 40%), hsl(350 75% 30%));
+  }
+
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, hsl(43 74% 49%), hsl(43 80% 35%));
+  }
+
+  .shadow-wine {
+    box-shadow: 0 4px 20px -4px hsla(350, 65%, 40%, 0.3);
+  }
+
+  .shadow-gold {
+    box-shadow: 0 4px 20px -4px hsla(43, 74%, 49%, 0.3);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 10px 40px -10px hsla(20, 14%, 20%, 0.15);
+  }
+
+  .border-wine {
+    border-color: hsl(350 65% 40%);
+  }
+
+  .border-gold {
+    border-color: hsl(43 74% 49%);
+  }
+
+  /* Wine shimmer animation for primary elements */
+  @keyframes shimmerWine {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .animate-shimmer-wine {
+    background: linear-gradient(
+      90deg,
+      hsl(350 65% 40%) 0%,
+      hsl(350 55% 55%) 50%,
+      hsl(350 65% 40%) 100%
+    );
+    background-size: 200% auto;
+    animation: shimmerWine 3s linear infinite;
+  }
+
+  /* Keep gold shimmer for accents */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(43 74% 49%) 0%,
+      hsl(43 60% 70%) 50%,
+      hsl(43 74% 49%) 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Pulse glow for wine elements */
+  @keyframes pulseGlowWine {
+    0%,
+    100% {
+      box-shadow: 0 0 20px hsla(350, 65%, 40%, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsla(350, 65%, 40%, 0.5);
+    }
+  }
+
+  .animate-pulse-glow-wine {
+    animation: pulseGlowWine 2s ease-in-out infinite;
+  }
+
+  /* Keep gold pulse glow for accents */
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px hsla(43, 74%, 49%, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsla(43, 74%, 49%, 0.5);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  /* Wine line separator for primary sections */
+  /* .separator-line-wine { */
+  .separator-line {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(350 65% 40%),
+      transparent
+    );
+  }
+
+  /* Gold line separator for accents */
+  /* .separator-line {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(43 74% 49%),
+      transparent
+    );
+  } */
+
+  /* Decorative corner flourish - wine for primary */
+  .flourish-wine {
+    position: relative;
+  }
+
+  .flourish-wine::before,
+  .flourish-wine::after {
+    content: '✦';
+    color: hsl(350 65% 40%);
+    font-size: 0.75rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .flourish-wine::before {
+    left: -1.5rem;
+  }
+
+  .flourish-wine::after {
+    right: -1.5rem;
+  }
+
+  /* Gold flourish for accents */
+  .flourish {
+    position: relative;
+  }
+
+  .flourish::before,
+  .flourish::after {
+    content: '✦';
+    color: hsl(43 74% 49%);
+    font-size: 0.75rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .flourish::before {
+    left: -1.5rem;
+  }
+
+  .flourish::after {
+    right: -1.5rem;
+  }
+}
+
+/* Custom scrollbar - Wine themed */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(40 30% 92%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(350 65% 40%); /* Wine */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(350 75% 30%); /* Darker wine */
+}
