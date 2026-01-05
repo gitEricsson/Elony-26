@@ -83,7 +83,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.9, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="relative font-script text-7xl md:text-9xl lg:text-[12rem] leading-none text-cream-dark drop-shadow-2xl mix-blend-overlay"
+              className="relative font-script text-7xl md:text-9xl lg:text-[11rem] leading-none text-cream-dark drop-shadow-2xl mix-blend-overlay"
             >
               Precious
             </motion.h1>
@@ -101,7 +101,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.9, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="relative font-script text-7xl md:text-9xl lg:text-[12rem] leading-none text-cream-dark drop-shadow-2xl"
+              className="relative font-script text-7xl md:text-9xl lg:text-[11rem] leading-none text-cream-dark drop-shadow-2xl"
             >
               Tony
             </motion.h1>
