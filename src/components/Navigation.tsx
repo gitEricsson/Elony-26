@@ -34,7 +34,7 @@ const Navigation = () => {
           : 'bg-transparent py-6'
       }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto lg:mx-0 px-6 flex items-center justify-between">
         <motion.a
           href="#home"
           className={`font-script text-2xl md:text-3xl  ${

@@ -118,10 +118,10 @@ const InvitationSection = () => {
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition-shadow">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3">
-                      <span className="p-2 bg-gold/5 rounded-lg text-gold">
+                      <span className="p-2 bg-primary/5 rounded-lg text-primary">
                         <Gem size={20} />
                       </span>
-                      <h4 className="font-heading font-semibold text-wine-light text-lg">
+                      <h4 className="font-heading font-semibold text-wine text-lg">
                         Holy Matrimony
                       </h4>
                     </div>
@@ -148,13 +148,13 @@ const InvitationSection = () => {
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:shadow-md transition-shadow">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3">
-                      <span className="p-2 bg-gold/10 rounded-lg text-gold">
+                      <span className="p-2 bg-primary/5 rounded-lg text-primary">
                         {/* <div className="w-5 h-5 flex items-center justify-center font-serif italic">
                           R
                         </div> */}
                         <PartyPopper size={20} />
                       </span>
-                      <h4 className="font-heading font-semibold text-lg text-wine-light">
+                      <h4 className="font-heading font-semibold text-lg text-wine">
                         Reception
                       </h4>
                     </div>
