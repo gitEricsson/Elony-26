@@ -164,7 +164,7 @@ const GuestbookSection = ({ onNewMessage }: GuestbookSectionProps) => {
               Drive folder
             </p>
             <a
-              href="https://drive.google.com/drive/folders/YOUR_DRIVE_FOLDER_ID"
+              href="https://drive.google.com/drive/folders/1sfNCzJdKJ4fKwuGKJqQXfE4X10TF66xW?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium text-sm"
