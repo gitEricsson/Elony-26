@@ -240,9 +240,11 @@ const BlessingsWallSection = () => {
               {Math.min(indexOfLastMessage, allMessages.length)} of{' '}
               {allMessages.length} blessings
             </div>
+          </div>
+        )}
 
-            {/* Live indicator */}
-            {/* <motion.div
+        {/* Live indicator */}
+        {/* <motion.div
           animate={{ opacity: [0.4, 1, 0.4] }}
           transition={{ duration: 3, repeat: Infinity }}
           className="flex items-center justify-center gap-3 mt-12"
@@ -252,18 +254,16 @@ const BlessingsWallSection = () => {
             Live Updates Enabled
           </span>
         </motion.div> */}
-            <motion.div
-              animate={{ opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="flex items-center justify-center gap-3 mt-12"
-            >
-              <div className="w-1.5 h-1.5 bg-red-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-              <span className="font-heading text-[10px] tracking-[0.2em] uppercase text-stone-400">
-                Live updates are disabled. Reload page to see new wishes.
-              </span>
-            </motion.div>
-          </div>
-        )}
+        <motion.div
+          animate={{ opacity: [0.4, 1, 0.4] }}
+          transition={{ duration: 3, repeat: Infinity }}
+          className="flex items-center justify-center gap-3 mt-12"
+        >
+          <div className="w-1.5 h-1.5 bg-red-500 rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+          <span className="font-heading text-[10px] tracking-[0.2em] uppercase text-stone-400">
+            Live updates are disabled. Reload page to see new wishes.
+          </span>
+        </motion.div>
       </>
     );
   };
