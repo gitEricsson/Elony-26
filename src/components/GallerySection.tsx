@@ -229,7 +229,7 @@ const GallerySection = () => {
               whileTap={{ scale: 0.95 }}
               className={`aspect-square overflow-hidden ${
                 index === currentIndex
-                  ? 'ring-2 ring-primary ring-offset-2 ring-offset-background shadow-wine'
+                  ? 'ring-2 ring-primary ring-offset-2 ring-offset-background'
                   : 'opacity-60 hover:opacity-100'
               } transition-all duration-300 rounded-lg`}
             >
