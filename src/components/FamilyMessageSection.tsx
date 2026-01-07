@@ -42,13 +42,13 @@ const FamilyMessageSection = () => {
             </motion.div>
 
             <h2 className="font-script text-4xl md:text-5xl text-primary mb-8">
-              From the Bride's Family
+              From the Couple
             </h2>
 
             <div className="space-y-6 font-body text-lg leading-relaxed text-foreground/80">
               <p>
                 With hearts full of gratitude, we thank you for being a part of
-                Precious and Tony's special day.
+                our special day.
               </p>
               <p>
                 Your love, prayers, support, and presence made this celebration
@@ -58,7 +58,7 @@ const FamilyMessageSection = () => {
                 Every smile shared, every photo captured, and every moment spent
                 together reflect the beauty of family and friendship. We pray
                 that the joy of this union fills your homes as you continue to
-                surround the couple with love and blessings.
+                surround us with love and blessings.
               </p>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -86,7 +86,7 @@ const FamilyMessageSection = () => {
             >
               With love,
               <br />
-              The Bride's Family
+              Coutesy of the Bride's Family
             </motion.p>
           </motion.div>
 
